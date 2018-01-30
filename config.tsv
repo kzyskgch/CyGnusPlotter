@@ -1,0 +1,63 @@
+###Server config###
+host	localhost
+port	8081
+
+###File handling config###
+data_folder	./data/
+file_name	temp_file.eps
+extend	.eps
+file_name_head	CyGnusPlotterOutput_
+inf_met_filename	inf_met.tsv
+sub_folder	./temp/
+system_check	1
+
+###Handling posts config###
+small_sep	,
+large_sep	\r\n
+
+###Layout config###
+output_width_without_margin	360
+rack_interval	28
+rack_margin	2
+scaling	1
+side_margin	120
+
+###EPS config###
+number_of_decimal_places	2
+emphasize_line_width	0.5
+line_width	0.25
+bold_line	0.50
+ultra_bold_line	2.0
+
+###Font config###
+font	Arial	Verdana
+font_normal_size	12
+font_small_size	8
+font_title_size	12
+
+###Config for components###
+#Title
+title	No Title
+title_height	28
+#ScaleBar
+len_scale_bar	500
+scale_bar_unit	bp
+scale_x_coordinate	right
+scale_bar_comma	0
+#Site
+half_site_width	3
+#SNP
+cross_size	2.5
+#Box
+box_size	10
+#Arrow
+head_size	14
+shaft_size	8
+#Probe
+probe_rack	0
+#InfMet
+probe_name_length	10
+height_probe_name	1
+num_probes_in_one_line	7
+#Triangle
+triangle_half	6

@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<style>
+		body{
+			width:1000px;
+			margin-right: auto;
+			margin-left : auto;
+			text-align: left;
+			padding-left:40px;
+			color: "#292F33";
+			font-family:  arial;
+		}
+
+		h3{
+			width: 300px;
+			height: 70px;
+			background: "../logo.jpg" no-repeat;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		h4{
+			color: "#292F33";
+			margin-right: auto;
+			margin-left : auto;
+			font-family:  arial;
+		}
+
+		textarea {
+			border: 1px #555 double;
+		}
+
+		input {
+			border: 1px #555 double;
+		}
+
+		input#submit_button {
+			padding: 4px 10px;
+			border: solid 2.5px black;
+			cursor :pointer;
+			background-color: #e5fff2;
+			font-family:  arial;
+    		border-radius: 5px;
+		}
+
+		input#submit_button:hover {
+			color: white;
+			background-color: #66f;
+		}
+
+			.option {
+			}
+
+			.option label {
+				color: "#292F33";
+				padding: 2px;
+				font-size: 80%;
+				border: solid 1px black;
+				cursor :pointer;
+				background-color: #fff;
+				font-family:  arial;
+    		border-radius: 3px;
+
+			}
+
+			.option label:hover {
+				color: white;
+				background-color: #66f;
+			}
+
+			.option input#title_option, #site_option, #infmet_option, #snp_option,
+				#matching_probe_option, #scale_bar_option, #auto_rescale_option, #exon_option {
+			    display: none;
+			}
+
+			.option .hide {
+			    height: 0;
+			    padding: 0;
+			    overflow: hidden;
+			    opacity: 0;
+			    transition: 0.1s;
+			}
+
+			.option input:checked ~ .hide {
+			    padding: 10px 0;
+			    height: auto;
+			    opacity: 1;
+			}
+
+		p.right {
+			margin-right: auto;
+			margin-left : auto;
+			text-align: right;
+			font-size: 80%;
+			line-height: 20%
+		}
+
+		p.center {
+			margin-right: -10;
+			margin-left : -10;
+			text-align: center;
+		}
+
+		p.subhead{
+			font-size: 115%;
+			padding-left:0px;
+			line-height: 80%
+		}
+
+
+		p.comment{
+			font-size: 80%;
+			padding-left:20px;
+			line-height: 100%
+		}
+
+		p.center-comment{
+			margin-right: -10;
+			margin-left : -10;
+			text-align: center;
+			font-size: 60%;
+			line-height: 100%
+		}
+
+
+		p.sep {margin:2em;}
+
+	</style>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>CyGnusPlotter</title>
+	</head>
+
+	<body>
+		<div>
+			<H3><p class="center"><img src="../logo.jpg"></p></H3>
+			<H4><p class="center">&mdash;&mdash;<u>Cy</u>tosine-<u>G</u>uanine di<u>nu</u>cleotide <u>s</u>ites Plotter&mdash;&mdash;</p></H4>
+			<p class="center">Just enter an ID or a gene symbol to get a CpG diagram.</p>
+			<p class="comment"><a href="../cygnus/custom.html"> Link: custom mode</a></p>
+			<p class="comment"><a href="../">Return</a></p>
+			<p class="sep"></p>
+		</div>
+
+		<div>
+			<form name="form" method='POST' action="/by_ensembl_id/">
+			<p class="center">ID/gene symbol
+			<input type="text" name="id" rows="1" cols="40" style="width: 436px; height: 24px;" value="ENST00000380152"></p>
+			<p class="center-comment">By default setting, it searches Ensembl for a human transcript by a gene symbol.</p>
+			<p class="center-comment">Species can be specified by following the gene symbol with a comma. (<i>gene symbol</i>, <i>species</i>)</p>
+			<p class="center-comment">For specifying explicitly an exon combination, transcript IDs (ENST***, ENSMUST***, and so on.) can be used.</p>
+			<p class="center-comment">Entering NCBI IDs may work, depending on the Ensembl databases.</p>
+			<a href="https://www.ensembl.org/info/genome/stable_ids/index.html" target="_blank"><p class="right"> Learn more about the Ensembl IDs</a></p>
+			<input type="checkbox" name="get_expand" checked value="checked">
+			&thinsp;
+			Get flanking sequence &emsp;
+            <p class="comment">Checking this box and specifying lengths enables to acquire flanking sequences of the specified gene.</p>
+			<p>5' flanking seq:&emsp;
+			<input type="" name="expand5prime" style="width: 96px; height: 24px;" value="2000">
+			&emsp;&emsp;&emsp;&emsp;
+			3' flanking seq:&emsp;<input type="text" name="expand3prime" style="width: 96px; height: 24px;" value="1000"></p>
+			<p class="sep"></p>
+		</div>
+
+		<div>
+			<p class="left"><label><input id="submit_button" type="submit" value="submit" name="button"></label></p>
+			<p class="sep"></p>
+		</div>
+
+		<div class="option">
+			<p><label for="exon_option">Exon option</label></p>
+			<input type="checkbox"  id="exon_option"/>
+			<div class="hide">
+                <p class="comment">Exon numbers set to display...</p>
+				<p><input type="radio" name="exon_num_outer" value="outer">
+				&thinsp;
+				 outside boxes.&emsp;</p>
+				<p><input type="radio" name="exon_num_outer" value="inner">
+				&thinsp;
+				 inside boxes.&emsp;</p>
+	   			<p><input type="radio" name="exon_num_outer" value="not_displayied" checked>
+				&thinsp;
+				 not be.&emsp;
+				<p class="comment">With this option, exon numbers can be set to display inside exon boxes or not be displayed.</p>
+				<p class="sep"></p>
+			</div>
+		</div>
+
+		<div class="option">
+			<p><label for="title_option">Title option</label></p>
+			<input type="checkbox" id="title_option"/>
+			<div class="hide">
+				<p class="subhead"><input type="checkbox" name="show_title" checked value="checked">
+				&thinsp;Display the title</p>
+				<p class="comment">This option enables the title to be displayed. Users can change the location of the displayed title.</p>
+				<p><input type="radio" name="title_position" value="left"> left
+				<input type="radio" name="title_position" value="center" checked> center
+				<input type="radio" name="title_position" value="right"> right </p>
+			</div>
+		</div>
+
+		<div class="option">
+			<p><label for="site_option">Site option</label></p>
+			<input type="checkbox" id="site_option"/>
+			<div class="hide">
+				<p class="subhead">Sites matching pattern</p>
+				<p class="comment">Enter [site name], [pattern], <a href="../position_on_the_pattern.jpg" target="_blank">[position on the pattern]</a> to each row.</p>
+				<p class="comment">The specified pattern will be automatically recognized and indicated.</p>
+				<p class="comment">Users can use <a href="https://docs.python.org/3/library/re.html" target="_blank">the regular expression in Python.</a></p>
+				<p class="comment">example1)	CpG,CG,0</p>
+				<p class="comment">example2)	EcoRI,GAATTC,1</p>
+				<p class="comment">example3)	BglI,GCC.{5}GGC,7</p>
+				<p><textarea name="site" rows="5" cols="40" style="width: 436px; height: 120px;">CpG,CG,0
+EcoRI,GAATTC,1
+BglI,GCC.{5}GGC,7</textarea></p>
+			</div>
+		</div>
+
+		<div class="option">
+			<p><label for="infmet_option">Infinium option</label></p>
+			<input type="checkbox" id="infmet_option"/>
+			<div class="hide">
+				<p class="subhead"><input type="checkbox" name="show_all_infmet" value="checked">
+				&thinsp;Indicate all Infinium Methylation Assay probes&emsp;</p>
+				<p class="comment">Checking this box enables to indicate all probes in the acquired sequence, being preferred to specified IDs below.</p>
+				<p><input type="radio" name="infmet_platform" value="27K"> 27K</p>
+				<p><input type="radio" name="infmet_platform" value="450K"> 450K</p>
+				<p><input type="radio" name="infmet_platform" value="EPIC"  checked> EPIC</p>
+				<p class="subhead">Indicate specific probes</o>
+				<p class="comment">Specifying Infinium target IDs (cg***) enables to indicate positions. To separate IDs, commas or linefeeds can be used.</p>
+				<p><textarea name="infmet" rows="5" cols="40" style="width: 436px; height: 120px;">cg09102017,cg15865175
+cg22682213,cg25497877
+cg23628297,cg05153735
+cg09698981,cg12836863
+cg15856230,cg19634711
+cg24674189,cg26458617
+cg08157964,cg27253386</textarea></p>
+			</div>
+		</div>
+
+		<div class="option">
+			<p><label for="snp_option">SNP option</label></p>
+			<input type="checkbox" id="snp_option"/>
+			<div class="hide">
+				<p class="subhead">Indicate specific SNPs&emsp;</p>
+				<p class="comment">Specifying SNP IDs (rs***) in this option enables the SNP positions to be indicated. To separate IDs, commas or linefeeds can be used.</p>
+				<p><textarea name="snp" rows="5" cols="40" style="width: 436px; height: 120px;">rs1799944,rs766173
+rs144848,rs4987117</textarea></p>
+			</div>
+		</div>
+
+		<div class="option">
+			<p><label for="matching_probe_option">Matching probe option</label></p>
+			<input type="checkbox" id="matching_probe_option"/>
+			<div class="hide">
+				<p class="subhead">Matching probes</p>
+				<p class="comment">Enter [sequence name], [sequence] to each row.</p>
+				<p class="comment">This option enables display of completely matched sequences as horizontal lines.</p>
+				<p class="comment">Users can use <a href="https://docs.python.org/3/library/re.html" target="_blank">the regular expression in Python.</a></p>
+				<p class="comment"><u>DO NOT place linefeeds</u> in sequences users specify.</p>
+				<p><textarea name="matching_probe" rows="5" cols="40" style="width: 436px; height:120px;" wrap="off">UCSC_CpG_Island,CGCAGCGGCCCACCCAGGCCTGACTTCCGGGTGGTGCGTGTGCTGCGTGTCGCGTCACGGCGTCACGTGGCCAGCGCGGGCTTGTGGCGCGAGCTTCTGAAACTAGGCGGCAGAGGCGGAGCCGCTGTGGCACTGCTGCGCCTCTGCTGCGCCTCGGGTGTCTTTTGCGGCGGTGGGTCGCCGCCGGGAGAAGCGTGAGGGGACAGATTTGTGACCGGCGCGGTTTTTGTCAGCTTACTCCGGCCAAAAAAGAACTGCACCTCTGGAGCGGGTTAGTGGTGGTGGTAGTGGGTTGGGACGAGCGCGTCTTCCGCAGTCCCAGTCCAGCGTGGCGGGGGAGCGCCTCACGCCCCGGGTCGCTGCCGC</textarea></p>
+			</div>
+		</div>
+
+
+		<div class="option">
+			<p><label for="scale_bar_option">Scale bar option</label></p>
+			<input type="checkbox" id="scale_bar_option"/>
+			<div class="hide">
+				<p class="subhead"><input type="checkbox" name="show_scale_bar" checked value="checked">&thinsp;Show a scale Bar&emsp;</p>
+				<p class="comment">Checking this box enables of display scale bar. Users can change unit, length, and place of display.</p>
+				<p>Length:&emsp;<input type="text" name="len_scale_bar" style="width: 96px; height: 24px;" value="5000">
+				Unit:&emsp;<input type="text" name="scale_bar_unit" style="width: 96px; height: 24px;" value="bp"></p>
+				<p><input type="radio" name="scale_bar_position" value="left"> left
+				<input type="radio" name="scale_bar_position" value="center"> center
+				<input type="radio" name="scale_bar_position" value="right" checked> right</p>
+			</div>
+		</div>
+
+		<div class="option">
+			<p><label for="auto_rescale_option">Auto rescale option</label></p>
+			<input type="checkbox" id="auto_rescale_option"/>
+			<div class="hide">
+				<p class="subhead"><input type="checkbox" name="auto_rescale" checked value="checked">&thinsp;Auto Rescale&emsp;</p>
+				<p class="comment">This option enables adjustment of diagram widths as points.</p>
+				<p><input type="text" name="output_width" style="width: 96px; height: 24px;" value="360"></p>
+			</div>
+		</div>
+
+		</form>
+</body>
+</html>
