@@ -20,17 +20,17 @@ from cyglib import guimethod
 
 @bottle.route('/')
 def home():
-    return bottle.static_file('index.html', root= os.getcwd() + './html')
+    return bottle.static_file('index.html', root= os.getcwd() + '/html')
 
 
 @bottle.route('/cygnus/<file_path>')
 def html(file_path):
-    return bottle.static_file(file_path, root= './html'),
+    return bottle.static_file(file_path, root= '/html'),
 
 
 @bottle.route('/<file_path>')
 def image(file_path):
-    return bottle.static_file(file_path, root= './image')
+    return bottle.static_file(file_path, root= '/image')
 
 
 @bottle.route('/by_sequence/', method=['POST'])
