@@ -20,7 +20,7 @@
 ## Open CyGnusPlotter's Graphical user interface
 
 ### For Windows users
-&emsp; Windows users can open CyGnusPlotter's GUI through two ways below.  
+&emsp; Windows users can open CyGnusPlotter's GUI through two ways described below.  
   
 **Through Windows Explorer:**  
 &emsp; Open "CyGnusPlotterGUI.py" with Python 3.x.  
@@ -33,7 +33,7 @@
   
 
 ### For Mac, UNIX or Linux users
-&emsp; UNIX like systems users can open CyGnusPlotter's GUI through two ways below.  
+&emsp; UNIX like systems users can open CyGnusPlotter's GUI through two ways described below.  
   
 **Through Mac OSX Finder or other file managers:**  
 &emsp; Change "CyGnusPlotterGUI" to be executable, and click and run it in Terminal.  
