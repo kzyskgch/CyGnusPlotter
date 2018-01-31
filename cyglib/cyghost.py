@@ -25,12 +25,12 @@ def home():
 
 @bottle.route('/cygnus/<file_path>')
 def html(file_path):
-    return bottle.static_file(file_path, root= '/html'),
+    return bottle.static_file(file_path, root= './html'),
 
 
 @bottle.route('/<file_path>')
 def image(file_path):
-    return bottle.static_file(file_path, root= '/image')
+    return bottle.static_file(file_path, root= './image')
 
 
 @bottle.route('/by_sequence/', method=['POST'])
@@ -43,7 +43,7 @@ def by_sequence():
     usr_method = guimethod.DirectSeqInputUI(post_names)
     check = usr_method.process_post()
     if check == "KeyError":
-        return bottle.static_file('keyerror.html', root = '/html')
+        return bottle.static_file('keyerror.html', root = './html')
     usr_method.process_request()
     return usr_method.download()
 
