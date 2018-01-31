@@ -56,5 +56,5 @@
 
 
 # LICENSE
-&emsp; Except for Bottle, CyGnusPlotter is distributed under Ecducational Community License.  
+&emsp; Except for Bottle, CyGnusPlotter is distributed under  the Educational Community License, Version 2.0.
 &emsp; The CyGnusPlotter distribution includes web framework Bottle, being written by Marcel Hellkamp and available under MIT license.
