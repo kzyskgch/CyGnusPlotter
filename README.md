@@ -33,7 +33,7 @@
   
 
 ### For Mac, UNIX or Linux users
-&emsp; UNIX like systems users can open CyGnusPlotter's GUI in two ways described below.  
+&emsp; UNIX-like system users can open CyGnusPlotter's GUI in two ways described below.  
   
 **Mac OSX Finder or other file managers (i.e. on the window):**  
 &emsp;  Change "CyGnusPlotterGUI.py" to be executable, click and run it in Terminal.  
@@ -48,7 +48,7 @@
   
 
 ## Use CyGnusPlotter in Python's interactive mode
-&emsp; Make sure that the current directory is the parent path of CyGnusPlotter and import cyglib as the next line.
+&emsp; Make sure that the current directory is the parent path of CyGnusPlotter and import cyglib.
 ~~~
     >>> from cyglib import cyginput
 ~~~
@@ -57,4 +57,4 @@
 
 # LICENSE
 &emsp; Except for Bottle, CyGnusPlotter is distributed under  the Educational Community License, Version 2.0.   
-&emsp; The CyGnusPlotter distribution includes web framework Bottle, being written by Marcel Hellkamp and available under MIT license. 
+&emsp; The CyGnusPlotter distribution includes web framework [Bottle](https://bottlepy.org/) written by Marcel Hellkamp and available under MIT license. 
