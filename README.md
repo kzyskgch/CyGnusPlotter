@@ -15,17 +15,17 @@
 
 ## Install CyGnusPlotter
 &emsp; Download by clicking green top-right "Clone or download" button and unzip.  
-&emsp; The name of the unzipped folder includes a branch name such as, "master", but you have not to mind it.  
+&emsp; The name of the unzipped folder includes a branch name such as "master" but you have not to mind it.  
 
-## Open CyGnusPlotter's Graphical user interface
+## Open CyGnusPlotter's graphical user interface
 
 ### For Windows users
 &emsp; Windows users can open CyGnusPlotter's GUI in two ways described below.  
   
-**Windows Explorer:**  
+**Explorer (i.e. on the window):**  
 &emsp; Open "CyGnusPlotterGUI.py" with Python 3.x.  
   
-**command prompt:**  
+**Command prompt:**  
 &emsp; Make sure that the current directory is the parent path of CyGnusPlotter and execute the next line.
 ~~~
     > python ./CyGnusPlotterGUI.py
@@ -35,7 +35,7 @@
 ### For Mac, UNIX or Linux users
 &emsp; UNIX like systems users can open CyGnusPlotter's GUI in two ways described below.  
   
-**Mac OSX Finder or other file managers:**  
+**Mac OSX Finder or other file managers (i.e. on the window):**  
 &emsp;  Change "CyGnusPlotterGUI.py" to be executable, click and run it in Terminal.  
 &emsp; Older versions of Unix like systems may show different behavior.  
 
@@ -48,7 +48,7 @@
   
 
 ## Use CyGnusPlotter in Python's interactive mode
-&emsp; Make sure that the current directory is the parent path of CyGnusPlotter and execute the next line.
+&emsp; Make sure that the current directory is the parent path of CyGnusPlotter and import cyglib as the next line.
 ~~~
     >>> from cyglib import cyginput
 ~~~
