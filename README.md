@@ -1,7 +1,7 @@
 # CyGnusPlotter
 
 &emsp; Installing CyGnusPlotter is not difficult, however, you might have to do a few manipulation because CyGnusPlotter depends on Python.  
-&emsp; The way to install and uses are described here.
+&emsp; The ways to install and uses are described here.
 
 ## Install Python 3
 
