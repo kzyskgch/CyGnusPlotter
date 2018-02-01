@@ -1,20 +1,20 @@
 # CyGnusPlotter
 
-&emsp; Although installing CyGnusPlotter is not difficult, you might have to do a few manipulation because for CyGnusPlotter depends on Python.  
+&emsp; Installing CyGnusPlotter is not difficult, however, you might have to do a few manipulation because CyGnusPlotter depends on Python.  
 &emsp; The way to install and uses are described here.
 
 ## Install Python 3
 
-&emsp; You should install Python 3 if this is the first time using Python 3 on a machine you want to install CyGnusPlotter, except rare cases.
+&emsp; If this is the first time using Python 3 on a machine you want to install CyGnusPlotter, you should install the Python 3 except rare cases. 
 
 &emsp; [Download Python 3.x](https://www.python.org/)  
 &emsp; [A Beginner's Python Tutorial/Installing Python](https://en.wikibooks.org/wiki/A_Beginner%27s_Python_Tutorial/Installing_Python)  
 
-&emsp; The author recommends checking "Add Python 3.x to PATH" for Windows users. If not checking, a use of a command prompt below may not work.  
 &emsp; NOTE: CyGnusPlotter does **NOT** work in Python 2.  
+&emsp; NOTE: For  Windows users, checking "Add Python 3.x to PATH" is recommended when installing. If not checking, a use of a command prompt below may not work.  
 
 ## Install CyGnusPlotter
-&emsp; To install CyGnusPlotter, you should just download by clicking green top-right "Clone or download" button and unzip.  
+&emsp; Download by clicking green top-right "Clone or download" button and unzip.  
 &emsp; The name of the unzipped folder includes a branch name such as, "master", but you have not to mind it.  
 
 ## Open CyGnusPlotter's Graphical user interface
@@ -26,7 +26,7 @@
 &emsp; Open "CyGnusPlotterGUI.py" with Python 3.x.  
   
 **command prompt:**  
-&emsp; The current directory is assumed CyGnusPlotter's parent path.
+&emsp; Make sure that the current directory is the parent path of CyGnusPlotter and execute the next line.
 ~~~
     > python ./CyGnusPlotterGUI.py
 ~~~
@@ -36,19 +36,19 @@
 &emsp; UNIX like systems users can open CyGnusPlotter's GUI in two ways described below.  
   
 **Mac OSX Finder or other file managers:**  
-&emsp; Change "CyGnusPlotterGUI" to be executable, and click and run it in Terminal.  
+&emsp;  Change "CyGnusPlotterGUI.py" to be executable, click and run it in Terminal.  
 &emsp; Older versions of Unix like systems may show different behavior.  
 
 
 **Terminal:**  
-&emsp; The current directory is assumed CyGnusPlotter's parent path.
+&emsp; Make sure that the current directory is the parent path of CyGnusPlotter and execute the next line.
 ~~~
     $ python3 ./CyGnusPlotterGUI.py
 ~~~
   
 
 ## Use CyGnusPlotter in Python's interactive mode
-&emsp; The current directory is assumed CyGnusPlotter's parent path.
+&emsp; Make sure that the current directory is the parent path of CyGnusPlotter and execute the next line.
 ~~~
     >>> from cyglib import cyginput
 ~~~
@@ -56,5 +56,5 @@
 
 
 # LICENSE
-&emsp; Except for Bottle, CyGnusPlotter is distributed under  the Educational Community License, Version 2.0.
-&emsp; The CyGnusPlotter distribution includes web framework Bottle, being written by Marcel Hellkamp and available under MIT license.
+&emsp; Except for Bottle, CyGnusPlotter is distributed under  the Educational Community License, Version 2.0.   
+&emsp; The CyGnusPlotter distribution includes web framework Bottle, being written by Marcel Hellkamp and available under MIT license. 
